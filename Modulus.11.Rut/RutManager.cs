@@ -18,7 +18,7 @@ namespace Modulo11.Rut
         /// <summary>
         /// Dígito verificador, usualmente 'k'
         /// </summary>
-        public char KValue { get { return m11.CharFor11Value[0]; } }
+        public char KValue { get { return m11.CharFor10Value[0]; } }
 
         /// <summary>
         /// Mínimo de dígitos

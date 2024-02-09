@@ -1,9 +1,8 @@
-# Modulus 11 Rut
+# Modulus11 Rut
 
-Módulo 11 Es un método aritmético usado para validar números enteros. Es ampliamente usado en criptografía y validación de entrada.
-Algunas implementaciones son usadas para validar códigos numéricos de documentos.
+Módulo 11 Es un método aritmético usado para validar números enteros. Es ampliamente usado en criptografía y validación del ingreso de códigos numéricos de documentos.
 
-Como ejemplo el ID nacional de Chile, RUT, usa un número entero para identificar personas, instituciones y empresas. Para reducir errores , el módulo 11 de ese número es agregado al final.
+Como ejemplo, el ID nacional de Chile, RUT, usa un número entero para identificar personas, instituciones y empresas. Para reducir errores , el módulo 11 de ese número es agregado al final.
 
 ### ID: 12345678
 #### Módulo 11 del ID: 9
