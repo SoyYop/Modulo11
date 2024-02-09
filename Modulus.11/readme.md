@@ -40,7 +40,7 @@ We sum them all and get modulus 11 (number mod 11). It gives the reminder.\
 Then, we calculate a difference, DIF=11-reminder:\
  If  the result is 10, 1\
  If  the result is 11, 0\
- else, DIFF /* between 0-9 */
+ else, DIF /* between 0-9 */
 
 In some implementations, instead of using 0 when the remainder is 10, the verification code is replaced by a spacial character.
 One example is the chilean rut, where 10 is replaced by a 'k' and not a zero.
@@ -134,3 +134,8 @@ If it is a chilean rut, then 10=>'k', 44261539 / k 0r 44261539-k
     }
 
 ```
+
+
+Jorge Rojas @ 2024 under MIT license
+
+jorge.rojasmata@outlook.com  /  [+56(9)94328521](tel:+56994328521)
