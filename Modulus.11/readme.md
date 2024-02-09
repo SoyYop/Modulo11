@@ -70,7 +70,7 @@ DIF = 11-10=1
 
 The sum is 122 and remainder is 1
 DIF = 11-1=10 // Rule: if 10 => 1
-**Code = 1**, 44261539 / 1 
+**Code = 1**, 44261539 / 1
 If it is a chilean rut, then 10=>'k', 44261539 / k 0r 44261539-k
 
  
