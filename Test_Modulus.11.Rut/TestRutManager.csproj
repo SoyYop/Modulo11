@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\RutManager\RutManager.csproj" />
+    <ProjectReference Include="..\Modulus.11.Rut\Modulus11Rut.csproj" />
   </ItemGroup>
 
 </Project>

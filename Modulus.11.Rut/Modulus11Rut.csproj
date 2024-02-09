@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<Title>Modulus 11 Rut</Title>
+		<Version>1.0</Version>
+		<PackageId>Modulus.11.Rut</PackageId>
+		<Authors>Jorge Rojas</Authors>
+		<Description>Wrapper para generar, validar y formatear un rut chileno</Description>
+		<Copyright>2024 - MIT</Copyright>
+		<PackageReadmeFile>readme.md</PackageReadmeFile>
+		<PackageTags>modulus11; modulo11; modulo 11; modulo; 11; rut</PackageTags>		
+		<PackageProjectUrl>https://github.com/SoyYop/Modulo11/wiki/Modulus-11</PackageProjectUrl>
+		<PackageIcon>resources/icon.png</PackageIcon>
+		
+		<RepositoryUrl>https://github.com/SoyYop/Modulo11.git</RepositoryUrl>
+		
+		<PackageReleaseNotes>Primera versión</PackageReleaseNotes>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+		<EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Modulus.11\Modulus11.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="readme.md">
+			<PackagePath>\</PackagePath>
+			<Pack>True</Pack>
+		</None>
+		<None Update="resources\icon.png">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
+
+</Project>

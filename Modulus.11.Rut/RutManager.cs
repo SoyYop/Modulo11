@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 using Modulo11;
 
-namespace RutManager
+namespace Modulo11.Rut
 {
     /// <summary>
     /// Encapsula las operaciones necesarias para validar y generar ruts

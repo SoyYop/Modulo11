@@ -6,11 +6,22 @@
 		<Nullable>enable</Nullable>
 		<Title>Modulus 11</Title>
 		<Version>1.0</Version>
+		<PackageId>Modulus.11</PackageId>
 		<Authors>Jorge Rojas</Authors>
-		<Description>Calcula el módulo 11 de un entero, usado para validar la integridad de un número</Description>
+		<Description>Calculates modulo 11 of an integer. It is widely used as a checksum to validate integrity of a number.</Description>
 		<Copyright>2024 - MIT</Copyright>
 		<PackageReadmeFile>readme.md</PackageReadmeFile>
-		<PackageTags>modulus11; modulo11; rut</PackageTags>
+		<PackageTags>modulus11; modulo11; modulo 11; modulo; 11; rut</PackageTags>
+		<PackageProjectUrl>https://github.com/SoyYop/Modulo11/wiki/Modulus-11</PackageProjectUrl>
+		<PackageIcon>resources/icon.png</PackageIcon>
+		
+		<RepositoryUrl>https://github.com/SoyYop/Modulo11/wiki/Modulus-11</RepositoryUrl>
+		
+		<PackageReleaseNotes>First release</PackageReleaseNotes>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+		<EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -26,6 +37,10 @@
 
 	<ItemGroup>
 	  <None Update="readme.md">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
+	  <None Update="resources\icon.png">
 	    <Pack>True</Pack>
 	    <PackagePath>\</PackagePath>
 	  </None>
