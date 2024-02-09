@@ -5,7 +5,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<Title>Modulus 11</Title>
-		<Version>1.0.1</Version>
+		<Version>1.0.2</Version>
 		<PackageId>Sur.Modulus11</PackageId>
 		<Authors>Jorge Rojas</Authors>
 		<Description>Calculates modulo 11 of an integer. It is widely used as a checksum to validate integrity of a number.</Description>

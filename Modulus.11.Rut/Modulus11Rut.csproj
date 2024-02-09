@@ -5,7 +5,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<Title>Modulus 11 Rut</Title>
-		<Version>1.0.1</Version>
+		<Version>1.0.2</Version>
 		<PackageId>Sur.Modulus11.Rut</PackageId>
 		<Authors>Jorge Rojas</Authors>
 		<Description>Wrapper para generar, validar y formatear un rut chileno</Description>

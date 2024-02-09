@@ -2,76 +2,76 @@
 
 > For a **Chilean Rut** wrapper implementation please check **Modulus 11.Rut**
 >
-> Para una implementación del envoltorio del **Rut Chileno**, por favor revisa **Modulus 11.Rut**
+> Para una implementaciÃ³n de un wrapper del **Rut Chileno**, por favor revisa **Modulus 11.Rut**
 
  
-## Propósito
-*"Facilitar la creación, validación y compartición de números con sus correspondientes sumas de verificación Modulo 11."*
+## PropÃ³sito
+*"Facilitar la creaciÃ³n, validaciÃ³n y comparticiÃ³n de nÃºmeros con sus correspondientes sumas de verificaciÃ³n Modulo 11."*
 
 Esto se logra mediante:
-- Crear una biblioteca fácil de usar.
-- Proporcionar personalización sencilla con parámetros predeterminados.
-- Dejar aspectos de implementación, como números mínimos y máximos, al desarrollador.
-- Traer un registro independiente centrado en almacenar y dar formato al objeto módulo 11.
+- Crear una biblioteca fÃ¡cil de usar.
+- Proporcionar personalizaciÃ³n sencilla con parÃ¡metros predeterminados.
+- Dejar aspectos de implementaciÃ³n, como nÃºmeros mÃ­nimos y mÃ¡ximos, al desarrollador.
+- Traer un registro independiente centrado en almacenar y dar formato al objeto mÃ³dulo 11.
 
-Modulo 11 es un algoritmo aritmético utilizado para validar números enteros. Se utiliza ampliamente en criptografía y en la validación de códigos numéricos de documentos.
+Modulo 11 es un algoritmo aritmÃ©tico utilizado para validar nÃºmeros enteros. Se utiliza ampliamente en criptografÃ­a y en la validaciÃ³n de cÃ³digos numÃ©ricos de documentos.
 
-Como ejemplo, la cédula de identidad nacional de Chile, el RUT, utiliza un número entero para identificar personas, instituciones y empresas. Para reducir errores, se agrega al final el módulo 11 de ese número.\
+Como ejemplo, la cÃ©dula de identidad nacional de Chile, el RUT, utiliza un nÃºmero entero para identificar personas, instituciones y empresas. Para reducir errores, se agrega al final el mÃ³dulo 11 de ese nÃºmero.\
 \
 **ID: 12345678**\
-Módulo 11 de la ID: 9\
-Cédula de Identidad: 12345678-**9**\
+MÃ³dulo 11 de la ID: 9\
+CÃ©dula de Identidad: 12345678-**9**\
 \
 **ID: 11222333**\
-Módulo 11 de la ID: 8\
-Cédula de Identidad: 11222333-**8**
+MÃ³dulo 11 de la ID: 8\
+CÃ©dula de Identidad: 11222333-**8**
 
-Si los módulos 11 no coinciden, sabemos con certeza que hay un error en el número o en la suma de verificación.\
-Ayuda a verificar la integridad del número, no está destinado a corregirlo.
+Si los mÃ³dulos 11 no coinciden, sabemos con certeza que hay un error en el nÃºmero o en la suma de verificaciÃ³n.\
+Ayuda a verificar la integridad del nÃºmero, no estÃ¡ destinado a corregirlo.
 
 
 ## El algoritmo
 
-Proporcionaré una breve explicación; por favor, busca en Wikipedia para obtener detalles.
+ProporcionarÃ© una breve explicaciÃ³n; por favor, busca en Wikipedia para obtener detalles.
 
-Básicamente, debemos multiplicar cada dígito, de derecha a izquierda, con un búfer circular de seis dígitos (2,3,4,5,6,7), avanzando si tienes más de 6 dígitos en tu código.\
-Sumamos todos ellos y obtenemos el módulo 11 (número mod 11). Da el residuo.\
+BÃ¡sicamente, debemos multiplicar cada dÃ­gito, de derecha a izquierda, con un bÃºfer circular de seis dÃ­gitos (2,3,4,5,6,7), avanzando si tienes mÃ¡s de 6 dÃ­gitos en tu cÃ³digo.\
+Sumamos todos ellos y obtenemos el mÃ³dulo 11 (nÃºmero mod 11). Da el residuo.\
 Luego, calculamos una diferencia, DIF=11-residuo:\
  Si el resultado es 10, 1\
  Si el resultado es 11, 0\
  De lo contrario, DIFF /* entre 0-9 */
 
-En algunas implementaciones, en lugar de usar 0 cuando el residuo es 10, el código de verificación se reemplaza por un carácter especial. Un ejemplo es el RUT chileno, donde 10 se reemplaza por una 'k' y no un cero.
+En algunas implementaciones, en lugar de usar 0 cuando el residuo es 10, el cÃ³digo de verificaciÃ³n se reemplaza por un carÃ¡cter especial. Un ejemplo es el RUT chileno, donde 10 se reemplaza por una 'k' y no un cero.
 
 
 ### Ejemplo 1: 987654321
 
-| Búfer circular	| 4	 | 3	 | 2	 | 7	 | 6	 | 5	 | 4	 | 3	 | 2	 | 
+| BÃºfer circular	| 4	 | 3	 | 2	 | 7	 | 6	 | 5	 | 4	 | 3	 | 2	 | 
 | --- 	            | --- 	 | --- 	 | --- 	 | --- 	 | --- 	 | --- 	 | --- 	 | --- 	 | --- 	 | 
-| Número	        | 9	 | 8	 | 7	 | 6	 | 5	 | 4	 | 3	 | 2	 | 1	 | 
-| Multiplicación	| 4x9	 | 3x8	 | 2x7	 | 7x6	 | 6x5	 | 5x4	 | 4x3	 | 3x2	 | 2x1	 | 
+| NÃºmero	        | 9	 | 8	 | 7	 | 6	 | 5	 | 4	 | 3	 | 2	 | 1	 | 
+| MultiplicaciÃ³n	| 4x9	 | 3x8	 | 2x7	 | 7x6	 | 6x5	 | 5x4	 | 4x3	 | 3x2	 | 2x1	 | 
 | Resultado	        | 36	 | 24	 | 14	 | 42	 | 30	 | 20	 | 12	 | 6	 | 2	 | 
 
 La suma es 186 y el residuo es 10\
 DIF = 11-10=1\
-**Código = 1**, 987654321 / 1
+**CÃ³digo = 1**, 987654321 / 1
 
 ### Ejemplo 2: 44261539
 
-| Búfer circular	| 4	 | 3	 | 2	 | 7	 | 6	 | 5	 | 4	 | 3	 | 2	 | 
+| BÃºfer circular	| 4	 | 3	 | 2	 | 7	 | 6	 | 5	 | 4	 | 3	 | 2	 | 
 | --- 	            | ---	| ---	| --- 	| --- 	| --- 	| --- 	| --- 	| --- 	| --- 	 | 
-| Número	        | 	 | 4	 | 4	 | 2	 | 6	 | 1	 | 5	 | 3	 | 9	 | 
-| Multiplicación	| 4x	 | 3x4	 | 2x4	 | 7x2	 | 6x6	 | 5x1	 | 4x5	 | 3x3	 | 2x9	 | 
+| NÃºmero	        | 	 | 4	 | 4	 | 2	 | 6	 | 1	 | 5	 | 3	 | 9	 | 
+| MultiplicaciÃ³n	| 4x	 | 3x4	 | 2x4	 | 7x2	 | 6x6	 | 5x1	 | 4x5	 | 3x3	 | 2x9	 | 
 | Resultado	        | 0	 | 12	 | 8	 | 14	 | 36	 | 5	 | 20	 | 9	 | 18	 | 
 
 La suma es 122 y el residuo es 11\
 DIF = 11-1=10 // Regla: si 10 => 1\
-**Código = 1**, 44261539 / 1
+**CÃ³digo = 1**, 44261539 / 1
 
 Si es un RUT chileno, entonces 10=>'k', 44261539 / k o 44261539-k
 
 
-## Cómo usar Modulus 11
+## CÃ³mo usar Modulus 11
 
 ```csharp
  long iNumber = 12345678;
