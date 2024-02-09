@@ -1,7 +1,8 @@
 # Modulus11
 
 > For a **Chilean Rut** wrapper implementation please check **Modulus 11.Rut**
-> Para la implementaciÛn de un wrapper del **Rut Chileno** por favor revise **Modulus 11.Rut**
+> 
+> Para la implementaci√≥n de un wrapper del **Rut Chileno** por favor revise **Modulus 11.Rut**
 
 
 ## Purpose
