@@ -2,85 +2,85 @@
 
 > For a **modulo 11** library please check **Modulus 11**
 >
-> Para una librería de **Módulo 11**, por favor revisa **Modulus 11**
+> Para una librerÃ­a de **MÃ³dulo 11**, por favor revisa **Modulus 11**
 
  
-## Propósito
-*"Facilitar la creación, validación y compartición de ruts con sus correspondientes sumas de verificación Modulo 11."*
+## PropÃ³sito
+*"Facilitar la creaciÃ³n, validaciÃ³n y comparticiÃ³n de ruts con sus correspondientes sumas de verificaciÃ³n Modulo 11."*
 
 Esto se logra mediante:
-- Crear una biblioteca fácil de usar.
-- Proporcionar personalización sencilla con parámetros predeterminados.
-- Retornar tanto strings formateados como records con el rut desglosado y capaz de dar formato al objeto módulo 11.
+- Crear una biblioteca fÃ¡cil de usar.
+- Proporcionar personalizaciÃ³n sencilla con parÃ¡metros predeterminados.
+- Retornar tanto strings formateados como records con el rut desglosado y capaz de dar formato al objeto mÃ³dulo 11.
 - Proporcionar las herramientas de formato necesarias para procesar, validar y generar ruts.
 
-Modulo 11 es un algoritmo aritmético utilizado para validar números enteros. Se utiliza ampliamente en criptografía y en la validación de códigos numéricos de documentos.
+Modulo 11 es un algoritmo aritmÃ©tico utilizado para validar nÃºmeros enteros. Se utiliza ampliamente en criptografÃ­a y en la validaciÃ³n de cÃ³digos numÃ©ricos de documentos.
 
-Como ejemplo, la cédula de identidad nacional de Chile, el RUT, utiliza un número entero para identificar personas, instituciones y empresas. Para reducir errores, se agrega al final el módulo 11 de ese número.\
+Como ejemplo, la cÃ©dula de identidad nacional de Chile, el RUT, utiliza un nÃºmero entero para identificar personas, instituciones y empresas. Para reducir errores, se agrega al final el mÃ³dulo 11 de ese nÃºmero.\
 \
 **ID: 12345678**\
-Módulo 11 de la ID: 9\
-Cédula de Identidad: 12345678-**9**\
+MÃ³dulo 11 de la ID: 9\
+CÃ©dula de Identidad: 12345678-**9**\
 \
 **ID: 11222333**\
-Módulo 11 de la ID: 8\
-Cédula de Identidad: 11222333-**8**
+MÃ³dulo 11 de la ID: 8\
+CÃ©dula de Identidad: 11222333-**8**
 
-Si los módulos 11 no coinciden, sabemos con certeza que hay un error en el número o en la suma de verificación.\
-Ayuda a verificar la integridad del número, no está destinado a corregirlo.
+Si los mÃ³dulos 11 no coinciden, sabemos con certeza que hay un error en el nÃºmero o en la suma de verificaciÃ³n.\
+Ayuda a verificar la integridad del nÃºmero, no estÃ¡ destinado a corregirlo.
 
 
 ## El algoritmo
 
-Proporcionaré una breve explicación; por favor, busca en Wikipedia para obtener detalles.
+ProporcionarÃ© una breve explicaciÃ³n; por favor, busca en Wikipedia para obtener detalles.
 
-Básicamente, debemos multiplicar cada dígito, de derecha a izquierda, con un búfer circular de seis dígitos (2,3,4,5,6,7), avanzando al inicio si tienes más de 6 dígitos en el código.\
-Sumamos todos ellos y obtenemos el módulo 11 (número mod 11). Da el residuo.\
+BÃ¡sicamente, debemos multiplicar cada dÃ­gito, de derecha a izquierda, con un bÃºfer circular de seis dÃ­gitos (2,3,4,5,6,7), avanzando al inicio si tienes mÃ¡s de 6 dÃ­gitos en el cÃ³digo.\
+Sumamos todos ellos y obtenemos el mÃ³dulo 11 (nÃºmero mod 11). Da el residuo.\
 Luego, calculamos una diferencia, DIF=11-residuo:\
  Si el resultado es 10, usaremos 'K'\
  Si el resultado es 11, 0\
  De lo contrario, DIF /* entre 0-9 */
 
-En algunas implementaciones, en lugar de usar 0 cuando el residuo es 10, el código de verificación se reemplaza por un carácter especial. Un ejemplo es el RUT chileno, donde 10 se reemplaza por una 'k' y no un cero.
+En algunas implementaciones, en lugar de usar 0 cuando el residuo es 10, el cÃ³digo de verificaciÃ³n se reemplaza por un carÃ¡cter especial. Un ejemplo es el RUT chileno, donde 10 se reemplaza por una 'k' y no un cero.
 
 
 ### Ejemplo 1: 987654321
 
-| Búfer circular	| 4	 | 3	 | 2	 | 7	 | 6	 | 5	 | 4	 | 3	 | 2	 | 
+| BÃºfer circular	| 4	 | 3	 | 2	 | 7	 | 6	 | 5	 | 4	 | 3	 | 2	 | 
 | --- 	            | --- 	 | --- 	 | --- 	 | --- 	 | --- 	 | --- 	 | --- 	 | --- 	 | --- 	 | 
-| Número	        | 9	 | 8	 | 7	 | 6	 | 5	 | 4	 | 3	 | 2	 | 1	 | 
-| Multiplicación	| 4x9	 | 3x8	 | 2x7	 | 7x6	 | 6x5	 | 5x4	 | 4x3	 | 3x2	 | 2x1	 | 
+| NÃºmero	        | 9	 | 8	 | 7	 | 6	 | 5	 | 4	 | 3	 | 2	 | 1	 | 
+| MultiplicaciÃ³n	| 4x9	 | 3x8	 | 2x7	 | 7x6	 | 6x5	 | 5x4	 | 4x3	 | 3x2	 | 2x1	 | 
 | Resultado	        | 36	 | 24	 | 14	 | 42	 | 30	 | 20	 | 12	 | 6	 | 2	 | 
 
 La suma es 186 y el residuo es 10\
 DIF = 11-10=1\
-**Código = 1**, 987654321-1
+**CÃ³digo = 1**, 987654321-1
 
 ### Ejemplo 2: 44261539
 
-| Búfer circular	| 4	 | 3	 | 2	 | 7	 | 6	 | 5	 | 4	 | 3	 | 2	 | 
+| BÃºfer circular	| 4	 | 3	 | 2	 | 7	 | 6	 | 5	 | 4	 | 3	 | 2	 | 
 | --- 	            | ---	| ---	| --- 	| --- 	| --- 	| --- 	| --- 	| --- 	| --- 	 | 
-| Número	        | 	 | 4	 | 4	 | 2	 | 6	 | 1	 | 5	 | 3	 | 9	 | 
-| Multiplicación	| 4x	 | 3x4	 | 2x4	 | 7x2	 | 6x6	 | 5x1	 | 4x5	 | 3x3	 | 2x9	 | 
+| NÃºmero	        | 	 | 4	 | 4	 | 2	 | 6	 | 1	 | 5	 | 3	 | 9	 | 
+| MultiplicaciÃ³n	| 4x	 | 3x4	 | 2x4	 | 7x2	 | 6x6	 | 5x1	 | 4x5	 | 3x3	 | 2x9	 | 
 | Resultado	        | 0	 | 12	 | 8	 | 14	 | 36	 | 5	 | 20	 | 9	 | 18	 | 
 
 La suma es 122 y el residuo es 11\
 DIF = 11-1=10 // Regla: si 10 => 'k'\
-**Código = 'k'**, 44261539-k
+**CÃ³digo = 'k'**, 44261539-k
 
 
-## Validación y generación
+## ValidaciÃ³n y generaciÃ³n
 
 La clase RutManager sirve para generar y validar ruts. El constructor puede personalizarse de la siguiente manera:
 
 ```csharp
 	/// <param name="minDigits">1 a maxDigits</param>
     /// <param name="maxDigits">Desde minDigits hasta 12</param>
-    /// <param name="charForKValue">Por omisión, "k" minúscula</param>
+    /// <param name="charForKValue">Por omisiÃ³n, "k" minÃºscula</param>
     public RutManager(byte minDigits = 1, byte maxDigits = 8, char charForKValue = 'k')
 ```
 
-Así, podremos limitar los rangos (ya no debieran quedar ruts o personas jurídicas con menos de cuatro dígitos) y si usaremos k mayúscula o minúscula (Recordar que el módulo 11 estándar usa '1' en vez de 'k')
+AsÃ­, podremos limitar los rangos (ya no debieran quedar ruts o personas jurÃ­dicas con menos de cuatro dÃ­gitos) y si usaremos k mayÃºscula o minÃºscula (Recordar que el mÃ³dulo 11 estÃ¡ndar usa '1' en vez de 'k')
 
 
 ### Validar un rut con o sin puntos
@@ -116,20 +116,20 @@ Acepta 12.345.678-5 y rechaza 12345678-5
 
 
 ### Generar rut
-Obtiene un record que mantiene parámetros de formato como guión y separador de miles
+Obtiene un record que mantiene parÃ¡metros de formato como guiÃ³n y separador de miles
 ```csharp
 	long number=76113195-8;
 
-	// Entre 5 y 8 dígitos
+	// Entre 5 y 8 dÃ­gitos
 	var rm = new RutManager(5,8);
 
 	var sinPuntos = rm.GetRutRecord(number);
 	var conPuntos = rm.GetRutRecord(number, "-", NumberGroupSeparator:".");
 
-	Console.Write("Sin puntos para el número " sinPuntos.Number);
+	Console.Write("Sin puntos para el nÃºmero " sinPuntos.Number);
 	Console.WriteLine(sinPuntos); // o sinPuntos.ToString()
 
-	Console.Write("Con puntos para el número " conPuntos.Number);
+	Console.Write("Con puntos para el nÃºmero " conPuntos.Number);
 	Console.WriteLine(conPuntos); // o conPuntos.ToString()
 ```
 
@@ -138,7 +138,7 @@ Obtiene un record que mantiene parámetros de formato como guión y separador de m
 ### Public enum TipoValidacionSeparadorEnum
 ```
 /// <summary>
-/// Opciones de validación de rut
+/// Opciones de validaciÃ³n de rut
 /// </summary>
 public enum TipoValidacionSeparadorEnum
 {
@@ -153,23 +153,23 @@ public enum TipoValidacionSeparadorEnum
 ```csharp
 	/// <param name="minDigits">1 a maxDigits</param>
     /// <param name="maxDigits">Desde minDigits hasta 12</param>
-    /// <param name="charForKValue">Por omisión, "k" minúscula</param>
+    /// <param name="charForKValue">Por omisiÃ³n, "k" minÃºscula</param>
     public RutManager(byte minDigits = 1, byte maxDigits = 8, char charForKValue = 'k');
 
 
 	/// <param name="rut"></param>
     /// <param name="tipo"></param>
-    /// <param name="soloFormato">Sólo valida formato, no el dv ni los dígitos</param>
+    /// <param name="soloFormato">SÃ³lo valida formato, no el dv ni los dÃ­gitos</param>
     /// <returns></returns>
     public bool ValidaRut(string rut, TipoValidacionSeparadorEnum tipo = TipoValidacionSeparadorEnum.ConOSinPuntos, bool soloFormato = false);
     
 
 	/// <remarks>
-    /// El objeto record retornado incluye el formato numérico definido (conSeparadores) y separador con guión
+    /// El objeto record retornado incluye el formato numÃ©rico definido (conSeparadores) y separador con guiÃ³n
     /// </remarks>
-	/// <param name="input">Número</param>
+	/// <param name="input">NÃºmero</param>
     /// <param name="conSeparadores">Puntos o no puntos</param>
-    /// <returns>RutRecord con un rut válido</returns>
+    /// <returns>RutRecord con un rut vÃ¡lido</returns>
     /// <exception cref="RutOutOfRangeException"></exception>
     public ModulusRecord GeneraRutRecord(long input, bool conSeparadores = false);
 
