@@ -213,7 +213,7 @@ namespace TestRutManager
         /// Listado de datos de validación
         /// </summary>
         /// <remarks>Puede cargarse desde un archuvo modificando Support.cs sin tocar este código</remarks>
-        /// <returns>Ienumerable (númeero, módulo)</returns>
+        /// <returns>Ienumerable (número, módulo)</returns>
         public static IEnumerable<(string, bool)> GetValidarFormatosData()
         {
             return Support.GetValidarFormatosData();
