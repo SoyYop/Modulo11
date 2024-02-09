@@ -4,13 +4,11 @@ using Modulo11;
 
 using NUnit.Framework;
 
-using System;
-using System.ComponentModel;
 
 namespace TestModulus11
 {
     [TestFixture(Author = "Jorge Rojas", Category = "Modulus11", TestName = "Módulo 11: Casos de uso")]
-    public class ModulusUnitTest
+    public class Modulus11_UnitTest
     {
         // internal TestContext TestContext { get; set; }
 

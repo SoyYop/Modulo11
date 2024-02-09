@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace RutManager
+namespace Modulo11.Rut
 {
     /// <summary>
     /// Provee la base para validar ruts

@@ -25,7 +25,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\Modulus11\Modulus11.csproj" />
+		<ProjectReference Include="..\Modulus.11\Modulus11.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

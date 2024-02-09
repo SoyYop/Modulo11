@@ -1,8 +1,11 @@
+
+using Modulo11.Rut;
+
 namespace TestRutManager
 {
 
     [TestFixture(Author = "Jorge Rojas", Category = "RutManager", TestName = "Ruts: Casos de uso")]
-    public class RutManagerUnitTests
+    public class Modulus11Rut_UnitTest
     {
         [SetUp]
         public void Setup()
@@ -13,7 +16,7 @@ namespace TestRutManager
         [Test]
         public void TestBorderCondition_MinFail_Negative()
         {
-            var rm = new RutManager.RutManager();
+            var rm = new RutManager();
 
             Assert.That(() =>
             {
@@ -26,7 +29,7 @@ namespace TestRutManager
         [Test]
         public void TestBorderCondition_MinPass_Zero()
         {
-            var rm = new RutManager.RutManager();
+            var rm = new RutManager();
 
             var ver = rm.GeneraRut(0);
             Assert.That<string>(ver, Is.EqualTo("0-0"));
@@ -36,7 +39,7 @@ namespace TestRutManager
         [Test]
         public void TestBorderCondition_MinPass_One()
         {
-            var rm = new RutManager.RutManager();
+            var rm = new RutManager();
 
             var ver = rm.GeneraRut(1);
 
@@ -47,7 +50,7 @@ namespace TestRutManager
         [Test]
         public void TestBorderCondition_MinPass_One_Separator()
         {
-            var rm = new RutManager.RutManager();
+            var rm = new RutManager();
 
             var ver = rm.GeneraRut(1, conSeparadores:true);
 
@@ -58,7 +61,7 @@ namespace TestRutManager
         [Test]
         public void TestRecord_Get()
         {
-            var rm = new RutManager.RutManager();
+            var rm = new RutManager();
 
             var ver = rm.GeneraRutRecord(1, conSeparadores: true);
 
@@ -74,11 +77,11 @@ namespace TestRutManager
         public void TestCasoReal_ConOSinPuntos()
         {
             // Prepara
-            var rm = new RutManager.RutManager();
+            var rm = new RutManager();
             var sRut = "76113195-8";
 
             // Ejecuta
-            var result = rm.ValidaRut(sRut, RutManager.TipoValidacionSeparadorEnum.ConOSinPuntos);
+            var result = rm.ValidaRut(sRut, TipoValidacionSeparadorEnum.ConOSinPuntos);
 
             // Compara
             Assert.That(result, Is.True);
@@ -95,11 +98,11 @@ namespace TestRutManager
         public void TestCasoReal_RequerirPuntos()
         {
             // Prepara
-            var rm = new RutManager.RutManager();
+            var rm = new RutManager();
             var sRut = "76.113.195-8";
 
             // Ejecuta
-            var result = rm.ValidaRut(sRut, RutManager.TipoValidacionSeparadorEnum.RequerirPuntos);
+            var result = rm.ValidaRut(sRut, TipoValidacionSeparadorEnum.RequerirPuntos);
 
             // Compara
             Assert.That(result, Is.True);
@@ -116,11 +119,11 @@ namespace TestRutManager
         public void TestCasoReal_DenegarPuntos()
         {
             // Prepara
-            var rm = new RutManager.RutManager();
+            var rm = new RutManager();
             var sRut = "76113195-8";
 
             // Ejecuta
-            var result = rm.ValidaRut(sRut, RutManager.TipoValidacionSeparadorEnum.DenegarPuntos);
+            var result = rm.ValidaRut(sRut, TipoValidacionSeparadorEnum.DenegarPuntos);
 
             // Compara
             Assert.That(result, Is.True);
@@ -138,11 +141,11 @@ namespace TestRutManager
         public void TestCasoReal_RequerirPuntos_fail()
         {
             // Prepara
-            var rm = new RutManager.RutManager();
+            var rm = new RutManager();
             var sRut = "76113195-8";
 
             // Ejecuta
-            var result = rm.ValidaRut(sRut, RutManager.TipoValidacionSeparadorEnum.RequerirPuntos);
+            var result = rm.ValidaRut(sRut, TipoValidacionSeparadorEnum.RequerirPuntos);
 
             // Compara
             Assert.That(result, Is.False);
@@ -159,11 +162,11 @@ namespace TestRutManager
         public void TestCasoReal_DenegarPuntos_fail()
         {
             // Prepara
-            var rm = new RutManager.RutManager();
+            var rm = new RutManager();
             var sRut = "76.113.195-8";
 
             // Ejecuta
-            var result = rm.ValidaRut(sRut, RutManager.TipoValidacionSeparadorEnum.DenegarPuntos);
+            var result = rm.ValidaRut(sRut, TipoValidacionSeparadorEnum.DenegarPuntos);
 
             // Compara
             Assert.That(result, Is.False);
@@ -186,9 +189,9 @@ namespace TestRutManager
         [TestCase("1.000.000.001-4", false, Category = "Borde", TestName = "Condiciones de Borde - Superior+2")]
         public void ValidaExtremosTest(string input, bool expectedResult)
         {
-            var rm = new RutManager.RutManager(1,9);
+            var rm = new RutManager(1,9);
 
-            bool result = rm.ValidaRut(input, RutManager.TipoValidacionSeparadorEnum.ConOSinPuntos);
+            bool result = rm.ValidaRut(input, TipoValidacionSeparadorEnum.ConOSinPuntos);
 
             Assert.That(expectedResult, Is.EqualTo(result));
         }
@@ -201,7 +204,7 @@ namespace TestRutManager
         [Test(Description = "Pruebas masivas"), TestCaseSource(nameof(GetValidarFormatosData))]
         public void TestValidarFormatos((string sRut, bool expected) toTest)
         {
-            var rm = new RutManager.RutManager(1,9);
+            var rm = new RutManager(1,9);
 
             var result = rm.ValidaRut(toTest.sRut, soloFormato:true);
 

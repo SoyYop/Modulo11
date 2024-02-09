@@ -1,4 +1,4 @@
-﻿namespace RutManager
+﻿namespace Modulo11.Rut
 {
     public enum TipoValidacionSeparadorEnum
     {

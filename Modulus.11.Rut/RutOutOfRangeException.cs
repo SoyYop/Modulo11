@@ -1,6 +1,8 @@
 
-
 using System.Runtime.CompilerServices;
+
+
+namespace Modulo11.Rut;
 
 /// <summary>
 /// If the rut is out of bounds
