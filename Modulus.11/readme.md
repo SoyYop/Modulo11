@@ -56,7 +56,7 @@ One example is the chilean rut, where 10 is replaced by a 'k' and not a zero.
 
 The sum is 186 and remainder is 10\
 DIF = 11-10=1\
-** Code = 1**, 987654321 / 1
+**Code = 1**, 987654321 / 1
 
 ### Example 2: 44261539
 
@@ -134,6 +134,9 @@ If it is a chilean rut, then 10=>'k', 44261539 / k 0r 44261539-k
     }
 
 ```
+
+
+---
 
 
 Jorge Rojas @ 2024 under MIT license

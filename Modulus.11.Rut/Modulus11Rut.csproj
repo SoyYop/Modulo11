@@ -11,7 +11,7 @@
 		<Description>Wrapper para generar, validar y formatear un rut chileno</Description>
 		<Copyright>2024 - MIT</Copyright>
 		<PackageReadmeFile>readme.md</PackageReadmeFile>
-		<PackageTags>modulus11; modulus; modulo11; modulo 11; modulo; 11; rut; rut chileno; chilean rut; run</PackageTags>		
+		<PackageTags>modulus11; modulus; modulo11; modulo 11; modulo; 11; rut; rut chileno; chilean rut; run; Chile</PackageTags>		
 		<PackageProjectUrl>https://github.com/SoyYop/Modulo11/wiki/Modulus-11</PackageProjectUrl>
 		<PackageIcon>resources/icon.png</PackageIcon>
 		

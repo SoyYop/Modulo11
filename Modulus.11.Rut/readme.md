@@ -75,8 +75,8 @@ La clase RutManager sirve para generar y validar ruts. El constructor puede pers
 
 ```csharp
 	/// <param name="minDigits">1 a maxDigits</param>
-    /// <param name="maxDigits">Desde minDigits hasta 12</param>
-    /// <param name="charForKValue">Por omisión, "k" minúscula</param>
+	/// <param name="maxDigits">Desde minDigits hasta 12</param>
+	/// <param name="charForKValue">Por omisión, "k" minúscula</param>
     public RutManager(byte minDigits = 1, byte maxDigits = 8, char charForKValue = 'k')
 ```
 
@@ -148,23 +148,29 @@ public enum TipoValidacionSeparadorEnum
 }
 ```
 
+
 ### Public class RutManager
 
 ```csharp
-	/// <param name="minDigits">1 a maxDigits</param>
+/// <summary>
+/// Encapsula las operaciones necesarias para validar y generar ruts
+/// </summary>
+public class RutManager
+{
+    /// <param name="minDigits">1 a maxDigits</param>
     /// <param name="maxDigits">Desde minDigits hasta 12</param>
     /// <param name="charForKValue">Por omisión, "k" minúscula</param>
     public RutManager(byte minDigits = 1, byte maxDigits = 8, char charForKValue = 'k');
 
 
-	/// <param name="rut"></param>
+    /// <param name="rut"></param>
     /// <param name="tipo"></param>
     /// <param name="soloFormato">Sólo valida formato, no el dv ni los dígitos</param>
     /// <returns></returns>
     public bool ValidaRut(string rut, TipoValidacionSeparadorEnum tipo = TipoValidacionSeparadorEnum.ConOSinPuntos, bool soloFormato = false);
     
 
-	/// <remarks>
+    /// <remarks>
     /// El objeto record retornado incluye el formato numérico definido (conSeparadores) y separador con guión
     /// </remarks>
 	/// <param name="input">Número</param>
@@ -174,18 +180,22 @@ public enum TipoValidacionSeparadorEnum
     public ModulusRecord GeneraRutRecord(long input, bool conSeparadores = false);
 
 
-	/// <param name="rut"></param>
+    /// <param name="rut"></param>
     /// <param name="conSeparadores">Puntos o no puntos</param>
     /// <returns></returns>
     public string GeneraRut(ModulusRecord rut, bool conSeparadores = false);
 
 
-	/// <param name="input"></param>
+    /// <param name="input"></param>
     /// <param name="conSeparadores">Puntos o no puntos</param>
     /// <returns></returns>
     /// <exception cref="RutOutOfRangeException"></exception>
     public string GeneraRut(long input, bool conSeparadores = false);
+}
 ```
+
+
+---
 
 
 Jorge Rojas @ 2024 bajo licencia MIT
