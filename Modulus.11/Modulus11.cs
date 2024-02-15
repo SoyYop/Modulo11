@@ -18,14 +18,20 @@ namespace Modulo11
         public string CharFor10Value { get; set; }
 
 
+        /// <summary>
+        /// Digit or character to use when the checksum is 10
+        /// </summary>
+        public string CharFor11Value { get; set; }
 
         /// <summary>
         /// Constructor
         /// </summary>
         /// <param name="charFor10Value">Character to use for 11-remainder=10, defaults to 1</param>
-        public Modulus11(string charFor10Value = "1")
+        /// <param name="charFor11Value">Character to use for 11-remainder=11, defaults to 0</param>
+        public Modulus11(string charFor10Value = "1", string charFor11Value = "0")
         {
             this.CharFor10Value = charFor10Value;
+            this.CharFor11Value = charFor11Value;
         }
 
 
@@ -79,10 +85,11 @@ namespace Modulo11
             int remainder = sum % 11;
 
             // Subtract as part of the process
-            int dv = (11 - remainder) % 11; // Modulo to convert 11 to 0
+            // int dv = (11 - remainder) % 11; // Modulo to convert 11 to 0
+            int dv = (11 - remainder);
 
-            // If it is 10, return the character for modulo 11
-            string result = (dv == 10) ? CharFor10Value : dv.ToString();
+            // If it is 10 or 11, return the character definded for it
+            string result = (dv == 10) ? CharFor10Value : (dv == 11) ? CharFor11Value : dv.ToString();
 
             // Return the checksum digit or modulo 11
             return result;

@@ -52,7 +52,7 @@ En algunas implementaciones, en lugar de usar 0 cuando el residuo es 10, el cód
 | Multiplicación	| 4x9	 | 3x8	 | 2x7	 | 7x6	 | 6x5	 | 5x4	 | 4x3	 | 3x2	 | 2x1	 | 
 | Resultado	        | 36	 | 24	 | 14	 | 42	 | 30	 | 20	 | 12	 | 6	 | 2	 | 
 
-La suma es 186 y el residuo es 10\
+La suma es 186 y el residuo es 10 (186%11 = 10)\
 DIF = 11-10=1\
 **Código = 1**, 987654321-1
 
@@ -64,7 +64,7 @@ DIF = 11-10=1\
 | Multiplicación	| 4x	 | 3x4	 | 2x4	 | 7x2	 | 6x6	 | 5x1	 | 4x5	 | 3x3	 | 2x9	 | 
 | Resultado	        | 0	 | 12	 | 8	 | 14	 | 36	 | 5	 | 20	 | 9	 | 18	 | 
 
-La suma es 122 y el residuo es 11\
+La suma es 122 y el residuo es 1 (122%11 = 1)\
 DIF = 11-1=10 // Regla: si 10 => 'k'\
 **Código = 'k'**, 44261539-k
 
@@ -74,9 +74,9 @@ DIF = 11-1=10 // Regla: si 10 => 'k'\
 La clase RutManager sirve para generar y validar ruts. El constructor puede personalizarse de la siguiente manera:
 
 ```csharp
-	/// <param name="minDigits">1 a maxDigits</param>
-	/// <param name="maxDigits">Desde minDigits hasta 12</param>
-	/// <param name="charForKValue">Por omisión, "k" minúscula</param>
+    /// <param name="minDigits">1 a maxDigits</param>
+    /// <param name="maxDigits">Desde minDigits hasta 12</param>
+    /// <param name="charForKValue">Por omisión, "k" minúscula</param>
     public RutManager(byte minDigits = 1, byte maxDigits = 8, char charForKValue = 'k')
 ```
 

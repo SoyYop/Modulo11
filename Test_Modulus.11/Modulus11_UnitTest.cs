@@ -46,6 +46,41 @@ namespace TestModulus11
         }
 
 
+
+        [Test]
+        public void TestBorderCondition_ModulusIs_10()
+        {
+            var m11 = new Modulo11.Modulus11("10");
+
+            var ver = m11.GetModulus(11111191);
+            Assert.That<string>(ver, Is.EqualTo("10"));
+
+
+            var rec = m11.GetModulusRecord(11111191);
+
+            Assert.That<string>(rec.Digit, Is.EqualTo("10"));
+        }
+
+
+
+        [Test]
+        public void TestBorderCondition_ModulusIs_11()
+        {
+            var m11 = new Modulo11.Modulus11(charFor10Value: "10", charFor11Value: "11");
+
+            var ver = m11.GetModulus(11111151);
+            Assert.That<string>(ver, Is.EqualTo("11"));
+
+
+            var rec = m11.GetModulusRecord(11111151);
+
+            Assert.That<string>(rec.Digit, Is.EqualTo("11"));
+        }
+
+
+       
+
+
         /// <summary>
         /// Formatos del record
         /// </summary>
@@ -116,6 +151,7 @@ namespace TestModulus11
             var rec = m11.GetModulusRecord(aNumberInt);
 
             Assert.That<string>(rec.Digit, Is.EqualTo(expectedResult));
+            Assert.That<string>(rec.ToString(), Is.EqualTo($"{aNumberInt}-{expectedResult}"));
         }
 
 

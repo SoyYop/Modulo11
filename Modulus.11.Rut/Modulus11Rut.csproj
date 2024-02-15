@@ -2,17 +2,18 @@
 
 	<PropertyGroup>
 		<TargetFramework>net7.0</TargetFramework>
+		<TargetFrameworks>net7.0;net8.0</TargetFrameworks>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<Title>Modulus 11 Rut</Title>
-		<Version>1.0.2</Version>
+		<Version>1.0.3</Version>
 		<PackageId>Sur.Modulus11.Rut</PackageId>
 		<Authors>Jorge Rojas</Authors>
 		<Description>Wrapper para generar, validar y formatear un rut chileno</Description>
 		<Copyright>2024 - MIT</Copyright>
 		<PackageReadmeFile>readme.md</PackageReadmeFile>
 		<PackageTags>modulus11; modulus; modulo11; modulo 11; modulo; 11; rut; rut chileno; chilean rut; run; Chile</PackageTags>		
-		<PackageProjectUrl>https://github.com/SoyYop/Modulo11/wiki/Modulus-11</PackageProjectUrl>
+		<PackageProjectUrl>https://github.com/SoyYop/Modulo11/wiki</PackageProjectUrl>
 		<PackageIcon>resources/icon.png</PackageIcon>
 		
 		<RepositoryUrl>https://github.com/SoyYop/Modulo11.git</RepositoryUrl>
@@ -28,6 +29,17 @@
 		<ProjectReference Include="..\Modulus.11\Modulus11.csproj" />
 	</ItemGroup>
 
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<IsAotCompatible>True</IsAotCompatible>
+		<VersionPrefix>pre-</VersionPrefix>
+		<CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<IsAotCompatible>True</IsAotCompatible>
+		<CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+	</PropertyGroup>
+	
 	<ItemGroup>
 		<None Update="readme.md">
 			<PackagePath>\</PackagePath>

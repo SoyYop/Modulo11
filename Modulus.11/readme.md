@@ -42,7 +42,7 @@ Then, we calculate a difference, DIF=11-reminder:\
  If  the result is 11, 0\
  else, DIF /* between 0-9 */
 
-In some implementations, instead of using 0 when the remainder is 10, the verification code is replaced by a spacial character.
+In some implementations, instead of using 0 when the remainder is 11, the verification code is replaced by a special character.
 One example is the chilean rut, where 10 is replaced by a 'k' and not a zero.
 
 
@@ -54,7 +54,7 @@ One example is the chilean rut, where 10 is replaced by a 'k' and not a zero.
 | Multiplication	| 4x9	 | 3x8	 | 2x7	 | 7x6	 | 6x5	 | 5x4	 | 4x3	 | 3x2	 | 2x1	 | 
 | Result	        | 36	 | 24	 | 14	 | 42	 | 30	 | 20	 | 12	 | 6	 | 2	 | 
 
-The sum is 186 and remainder is 10\
+The sum is 186 and remainder is 10 (186%11 = 10)\
 DIF = 11-10=1\
 **Code = 1**, 987654321 / 1
 
@@ -66,11 +66,11 @@ DIF = 11-10=1\
 | Multiplication	| 4x	 | 3x4	 | 2x4	 | 7x2	 | 6x6	 | 5x1	 | 4x5	 | 3x3	 | 2x9	 | 
 | Result	        | 0	 | 12	 | 8	 | 14	 | 36	 | 5	 | 20	 | 9	 | 18	 | 
 
-The sum is 122 and remainder is 11\
+The sum is 122 and remainder is 1 (122%11 = 1)\
 DIF = 11-1=10 // Rule: if 10 => 1\
 **Code = 1**, 44261539 / 1
 
-If it is a chilean rut, then 10=>'k', 44261539 / k 0r 44261539-k
+If it is a chilean rut, then 10=>'k', 44261539 / k or 44261539-k
 
  
 ## How to use Modulus 11
