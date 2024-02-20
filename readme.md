@@ -11,16 +11,15 @@
 
 ### Modulus 11.Rut
 
-*"To facilitate the creation, validation, and sharing of ruts with their corresponding validation digits Modulo 11 checksums."*
-
 *"Facilitar la creación, validación y compartición de ruts con sus correspondientes dígitos verificadores en Modulo 11."*
+
+*"To facilitate the creation, validation, and sharing of ruts with their corresponding validation digits Modulo 11 checksums."*
 
 
 ## Description
 
 See each project readme for more details
-
-Vea el readme de cada proyecto para más detalles
+Vea el readme de cada proyecto para mas detalles
 
 
 Jorge Rojas @ 2024 under MIT license
