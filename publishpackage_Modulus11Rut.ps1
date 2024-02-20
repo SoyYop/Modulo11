@@ -1,6 +1,6 @@
 # Fetch the API key from the environment variable
 $apiKey = $env:NUGET_API_KEY
-$version = "1.0.3"
+$version = "1.1.0"
 
 # Check if the API key is present
 if (-not $apiKey) {
