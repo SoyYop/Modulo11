@@ -6,7 +6,7 @@
 
  
 ## Propósito
-*"Facilitar la creación, validación y compartición de ruts con sus correspondientes sumas de verificación Modulo 11."*
+*"Facilitar la creación, validación y compartición de ruts con sus correspondientes dígitos verificadores en Modulo 11."*
 
 Esto se logra mediante:
 - Crear una biblioteca fácil de usar.

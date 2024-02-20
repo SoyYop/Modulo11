@@ -6,7 +6,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<Title>Modulus 11</Title>
-		<Version>1.0.3</Version>
+		<Version>1.1.0</Version>
 		<PackageId>Sur.Modulus11</PackageId>
 		<Authors>Jorge Rojas</Authors>
 		<Description>Calculates modulo 11 of an integer. It is widely used as a checksum to validate integrity of a number.</Description>
@@ -14,7 +14,7 @@
 		<PackageReadmeFile>readme.md</PackageReadmeFile>
 		<PackageTags>modulus11; modulus; modulo11; modulo 11; modulo; 11; rut; rut chileno; chilean rut; run; Chile</PackageTags>
 		<PackageProjectUrl>https://github.com/SoyYop/Modulo11/wiki</PackageProjectUrl>
-		<PackageIcon>resources/icon.png</PackageIcon>
+		<PackageIcon>icon.png</PackageIcon>
 		
 		<RepositoryUrl>https://github.com/SoyYop/Modulo11.git</RepositoryUrl>
 		
@@ -37,18 +37,30 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <None Update="readme.es.md">
+	  <None Remove="readme.es.md" />
+	  <None Remove="readme.md" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Include="resources\icon.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Include="resources\icon.png">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>	    
+	  </None>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Resource Include="readme.es.md">
 	    <PackagePath>\</PackagePath>
 	    <Pack>True</Pack>
-	  </None>
-	  <None Update="readme.md">
+	  </Resource>
+	  <Content Include="readme.md">
 	    <Pack>True</Pack>
 	    <PackagePath>\</PackagePath>
-	  </None>
-	  <None Update="resources\icon.png">
-	    <Pack>True</Pack>
-	    <PackagePath>\</PackagePath>
-	  </None>
+	  </Content>
 	</ItemGroup>
 
 </Project>
