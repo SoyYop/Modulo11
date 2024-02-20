@@ -6,7 +6,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<Title>Modulus 11 Rut</Title>
-		<Version>1.0.3</Version>
+		<Version>1.1.0</Version>
 		<PackageId>Sur.Modulus11.Rut</PackageId>
 		<Authors>Jorge Rojas</Authors>
 		<Description>Wrapper para generar, validar y formatear un rut chileno</Description>
@@ -14,7 +14,7 @@
 		<PackageReadmeFile>readme.md</PackageReadmeFile>
 		<PackageTags>modulus11; modulus; modulo11; modulo 11; modulo; 11; rut; rut chileno; chilean rut; run; Chile</PackageTags>		
 		<PackageProjectUrl>https://github.com/SoyYop/Modulo11/wiki</PackageProjectUrl>
-		<PackageIcon>resources/icon.png</PackageIcon>
+		<PackageIcon>icon.png</PackageIcon>
 		
 		<RepositoryUrl>https://github.com/SoyYop/Modulo11.git</RepositoryUrl>
 		
@@ -24,6 +24,10 @@
 		<EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 	</PropertyGroup>
+
+	<ItemGroup>
+	  <None Remove="readme.md" />
+	</ItemGroup>
 
 	<ItemGroup>
 		<ProjectReference Include="..\Modulus.11\Modulus11.csproj" />
@@ -41,14 +45,15 @@
 	</PropertyGroup>
 	
 	<ItemGroup>
-		<None Update="readme.md">
-			<PackagePath>\</PackagePath>
+		<Content Include="readme.md">
+		  <PackagePath>\</PackagePath>
+		  <Pack>True</Pack>
+		</Content>
+		<Content Include="resources\icon.png">
 			<Pack>True</Pack>
-		</None>
-		<None Update="resources\icon.png">
-			<Pack>True</Pack>
 			<PackagePath>\</PackagePath>
-		</None>
+			<CopyToOutputDirectory></CopyToOutputDirectory>
+		</Content>
 	</ItemGroup>
 
 </Project>
